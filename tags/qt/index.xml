@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qt on and2long 随记</title>
+    <link>https://and2long.github.io/tags/qt/</link>
+    <description>Recent content in Qt on and2long 随记</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 04 Mar 2022 19:24:36 +0000</lastBuildDate>
+    <atom:link href="https://and2long.github.io/tags/qt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qt应用Mac平台打包流程</title>
+      <link>https://and2long.github.io/post/qt%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85dmg%E6%B5%81%E7%A8%8B/</link>
+      <pubDate>Fri, 04 Mar 2022 19:24:36 +0000</pubDate>
+      <guid>https://and2long.github.io/post/qt%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85dmg%E6%B5%81%E7%A8%8B/</guid>
+      <description>&lt;h1 id=&#34;生成-release-包&#34;&gt;生成 release 包&lt;/h1&gt;&#xA;&lt;p&gt;Qt Creator 左下角切换为 Release 模式，然后点击左下角 Build 锤子🔨图标。&lt;/p&gt;&#xA;&lt;h1 id=&#34;定位到构建文件夹-build-directory&#34;&gt;定位到构建文件夹 Build directory&lt;/h1&gt;&#xA;&lt;p&gt;可在 Projects -&amp;gt; Build Settings 中找到：Build directory。&lt;/p&gt;&#xA;&lt;h1 id=&#34;使用-macdeployqt-工具打包-app-文件&#34;&gt;使用 macdeployqt 工具打包 .app 文件&lt;/h1&gt;&#xA;&lt;p&gt;工具所在目录：~/Qt/6.2.3/macos/bin&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;./macdeployqt $Build directory$/***.app&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>QSS选择器</title>
+      <link>https://and2long.github.io/post/qss%E9%80%89%E6%8B%A9%E5%99%A8/</link>
+      <pubDate>Wed, 19 Jan 2022 14:01:25 +0000</pubDate>
+      <guid>https://and2long.github.io/post/qss%E9%80%89%E6%8B%A9%E5%99%A8/</guid>
+      <description>&lt;h2 id=&#34;通配符选择器&#34;&gt;通配符选择器&lt;/h2&gt;&#xA;&lt;p&gt;* 匹配所有控件。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;* {&#xA;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>

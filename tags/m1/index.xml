@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>M1 on and2long 随记</title>
+    <link>https://and2long.github.io/tags/m1/</link>
+    <description>Recent content in M1 on and2long 随记</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 11 Mar 2022 19:37:46 +0000</lastBuildDate>
+    <atom:link href="https://and2long.github.io/tags/m1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>M1 平台 pod install 出错</title>
+      <link>https://and2long.github.io/post/m1%E5%B9%B3%E5%8F%B0-pod-install-%E5%87%BA%E9%94%99/</link>
+      <pubDate>Fri, 11 Mar 2022 19:37:46 +0000</pubDate>
+      <guid>https://and2long.github.io/post/m1%E5%B9%B3%E5%8F%B0-pod-install-%E5%87%BA%E9%94%99/</guid>
+      <description>&lt;h1 id=&#34;m1-平台-pod-install-出错&#34;&gt;M1 平台 pod install 出错&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;方法1：命令前加 arch -x86_64&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;code&gt;pod install&lt;/code&gt; 或者 &lt;code&gt;pod update&lt;/code&gt; 前面加 &lt;code&gt;arch -x86_64&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;如：&#xA;&lt;code&gt;arch -x86_64 pod install&lt;/code&gt;&#xA;&lt;code&gt;arch -x86_64 pod update&lt;/code&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;方法2: 卸载 cocoapods，用 brew 重新安装 cocoapods&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;code&gt;gem list --local | grep cocoapods | awk &#39;{print $1}&#39; | xargs sudo gem uninstall&lt;/code&gt;&#xA;&lt;code&gt;brew install cocoapods&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

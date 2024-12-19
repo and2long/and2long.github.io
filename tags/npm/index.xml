@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Npm on and2long 随记</title>
+    <link>https://and2long.github.io/tags/npm/</link>
+    <description>Recent content in Npm on and2long 随记</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 14 Feb 2022 15:19:00 +0000</lastBuildDate>
+    <atom:link href="https://and2long.github.io/tags/npm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>npm 相关</title>
+      <link>https://and2long.github.io/post/npm-%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Mon, 14 Feb 2022 15:19:00 +0000</pubDate>
+      <guid>https://and2long.github.io/post/npm-%E7%9B%B8%E5%85%B3/</guid>
+      <description>&lt;h1 id=&#34;查看-npm-配置&#34;&gt;查看 npm 配置&lt;/h1&gt;&#xA;&lt;p&gt;&lt;code&gt;npm config ls -l&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;npm-换源&#34;&gt;npm 换源&lt;/h1&gt;&#xA;&lt;p&gt;默认安装源为&lt;code&gt;https://registry.npmjs.org&lt;/code&gt;，更换为国内镜像地址之后，可以加快下载速度。&lt;/p&gt;&#xA;&lt;p&gt;以下两种方式都可以。推荐第二种方式，一次设置，所有项目生效。&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;下载依赖库时指定源：&#xA;&lt;code&gt;npm install aws-amplify --registry=https://registry.npmmirror.com&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;全局修改默认源：&#xA;&lt;code&gt;npm config set registry https://registry.npmmirror.com&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;检查当前源：&#xA;&lt;code&gt;npm config get registry&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;npm-查看全局安装路径&#34;&gt;npm 查看全局安装路径&lt;/h1&gt;&#xA;&lt;p&gt;&lt;code&gt;npm root -g&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;pnpm&#34;&gt;pnpm&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;安装 &lt;code&gt;npm install -g pnpm&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;检查存储路径 &lt;code&gt;pnpm store path&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;设置镜像地址 &lt;code&gt;pnpm set registry &amp;quot;https://registry.npmmirror.com&amp;quot;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+  </channel>
+</rss>

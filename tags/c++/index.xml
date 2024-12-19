@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on and2long 随记</title>
+    <link>https://and2long.github.io/tags/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on and2long 随记</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 25 Jan 2022 14:00:00 +0000</lastBuildDate>
+    <atom:link href="https://and2long.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43;函数</title>
+      <link>https://and2long.github.io/post/c&#43;&#43;%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Tue, 25 Jan 2022 14:00:00 +0000</pubDate>
+      <guid>https://and2long.github.io/post/c&#43;&#43;%E5%87%BD%E6%95%B0/</guid>
+      <description>&lt;h1 id=&#34;定义函数&#34;&gt;定义函数&lt;/h1&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;// 函数返回两个数中较大的那个数&#xA;int max(int num1, int num2) &#xA;{&#xA;   // 局部变量声明&#xA;   int result;&#xA;   if (num1 &amp;gt; num2)&#xA;      result = num1;&#xA;   else&#xA;      result = num2;&#xA;   return result; &#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on and2long 随记</title>
+    <link>https://and2long.github.io/tags/android/</link>
+    <description>Recent content in Android on and2long 随记</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 21 Mar 2022 22:21:33 +0800</lastBuildDate>
+    <atom:link href="https://and2long.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安卓项目修改gradle镜像地址</title>
+      <link>https://and2long.github.io/post/%E5%AE%89%E5%8D%93%E9%A1%B9%E7%9B%AE%E4%BF%AE%E6%94%B9gradle%E9%95%9C%E5%83%8F%E5%9C%B0%E5%9D%80/</link>
+      <pubDate>Mon, 21 Mar 2022 22:21:33 +0800</pubDate>
+      <guid>https://and2long.github.io/post/%E5%AE%89%E5%8D%93%E9%A1%B9%E7%9B%AE%E4%BF%AE%E6%94%B9gradle%E9%95%9C%E5%83%8F%E5%9C%B0%E5%9D%80/</guid>
+      <description>&lt;p&gt;将&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;google()&#xA;mavenCentral()&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改为：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;maven { url &amp;#39;https://maven.aliyun.com/repository/google&amp;#39; }&#xA;maven { url &amp;#39;https://maven.aliyun.com/repository/central&amp;#39; }&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;替换过期jcenter地址：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;maven { url &amp;#39;https://maven.aliyun.com/repository/jcenter&amp;#39; }&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>

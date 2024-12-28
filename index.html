@@ -153,7 +153,7 @@
                 </path>
               </svg>
               Posts
-              <span class="Counter">10</span>
+              <span class="Counter">11</span>
             </a>
           </nav>
           <div class="profile-color-modes js-promo-color-modes-banner-profile isInitialToggle">
@@ -430,7 +430,7 @@
         </path>
       </svg>
       Posts
-      <span class="Counter ">10</span>
+      <span class="Counter ">11</span>
     </a>
   </nav>
 </div>
@@ -454,6 +454,106 @@
           Popular posts
         </h2>
         <ol class="d-flex flex-wrap list-style-none gutter-condensed mb-4 js-pinned-items-reorder-list">
+          
+          <li class="col-12 col-md-6 col-lg-6 mb-3 d-flex flex-content-stretch">
+            <div
+              class="Box pinned-item-list-item d-flex p-3 width-full js-pinned-item-list-item public source reorderable sortable-button-item">
+              <div class="pinned-item-list-item-content">
+                <div class="d-flex width-full flex-items-center position-relative">
+                  <svg class="octicon octicon-repo mr-2 text-gray flex-shrink-0" viewBox="0 0 16 16" version="1.1"
+                    width="16" height="16">
+                    <path fill-rule="evenodd"
+                      d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z">
+                    </path>
+                  </svg>
+                  <a class="text-bold flex-auto min-width-0" href="https://and2long.github.io/post/%E7%94%9F%E6%88%90%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6/">
+                    <span class="repo" title="生成免费证书">生成免费证书</span>
+                  </a>
+                </div>
+
+
+                <div name="summary" class="pinned-item-desc text-gray text-small d-block mt-2 mb-3">
+                  <p>使用 acme.sh 来生成免费的证书</p>
+<p><a href="https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E">使用说明</a></p>
+<p>推荐使用 root 用户来安装和操作！！！</p>
+<h1 id="操作步骤">操作步骤</h1>
+<h3 id="安装-acmesh">安装 acme.sh</h3>
+<p>运行以下命令安装 acme.sh：
+<code>curl https://get.acme.sh | sh -s email=my@example.com</code></p>
+<p>然后，加载环境变量：
+<code>source ~/.bashrc</code></p>
+<h3 id="使用-cloudflare-的-dns-来签发证书">使用 Cloudflare 的 DNS 来签发证书</h3>
+<p>配置 Cloudflare API 令牌和邮箱：</p>
+<ul>
+<li><code>export CF_Token=&quot;你的API令牌&quot;</code></li>
+<li><code>export CF_Email=&quot;你的邮箱&quot;</code></li>
+</ul>
+<p>执行一下命令：
+<code>acme.sh --issue --dns dns_cf -d example.com -d *.example.com</code></p>
+<h3 id="安装证书">安装证书</h3>
+<pre tabindex="0"><code>acme.sh --install-cert -d example.com \
+--key-file /etc/nginx/ssl/example.com.key \
+--fullchain-file /etc/nginx/ssl/fullchain.cer \
+--reloadcmd &#34;systemctl reload nginx&#34;
+</code></pre><h3 id="查看已安装证书信息">查看已安装证书信息</h3>
+<p><code>acme.sh --info -d example.com</code></p>
+<h3 id="nginx-配置">nginx 配置</h3>
+<ul>
+<li>静态文件代理</li>
+</ul>
+<pre tabindex="0"><code>server {
+    listen 443 ssl;
+    server_name example.com;
+
+    ssl_certificate /etc/nginx/ssl/fullchain.cer;
+    ssl_certificate_key /etc/nginx/ssl/example.com.key;
+
+    ssl_session_cache shared:SSL:1m;
+    ssl_session_timeout 10m;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    root /data/projects/your-website;
+    index index.html;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+</code></pre><ul>
+<li>反向代理</li>
+</ul>
+<pre tabindex="0"><code>server {
+    listen 80;
+    server_name sub.example.com;
+    return 301 https://$host$request_uri;
+}
+server {
+    listen 443 ssl;
+    server_name sub.example.com;
+
+    ssl_certificate /etc/nginx/ssl/fullchain.cer;
+    ssl_certificate_key /etc/nginx/ssl/example.com.key;
+
+    ssl_session_cache shared:SSL:1m;
+    ssl_session_timeout 10m;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    location / {
+        proxy_pass  http://127.0.0.1:8075;
+    }
+}
+</code></pre>
+                </div>
+
+                <p class="mb-0 f6 text-gray">
+                  
+                </p>
+              </div>
+            </div>
+          </li>
           
           <li class="col-12 col-md-6 col-lg-6 mb-3 d-flex flex-content-stretch">
             <div
@@ -848,56 +948,18 @@ maven { url &#39;https://maven.aliyun.com/repository/central&#39; }
             </div>
           </li>
           
-          <li class="col-12 col-md-6 col-lg-6 mb-3 d-flex flex-content-stretch">
-            <div
-              class="Box pinned-item-list-item d-flex p-3 width-full js-pinned-item-list-item public source reorderable sortable-button-item">
-              <div class="pinned-item-list-item-content">
-                <div class="d-flex width-full flex-items-center position-relative">
-                  <svg class="octicon octicon-repo mr-2 text-gray flex-shrink-0" viewBox="0 0 16 16" version="1.1"
-                    width="16" height="16">
-                    <path fill-rule="evenodd"
-                      d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z">
-                    </path>
-                  </svg>
-                  <a class="text-bold flex-auto min-width-0" href="https://and2long.github.io/post/react-%E6%96%87%E7%AB%A0%E7%B2%BE%E9%80%89/">
-                    <span class="repo" title="React 文章精选">React 文章精选</span>
-                  </a>
-                </div>
-
-
-                <div name="summary" class="pinned-item-desc text-gray text-small d-block mt-2 mb-3">
-                  <h1 id="effect-相关">Effect 相关</h1>
-<ul>
-<li>官方文档：<a href="https://zh-hans.reactjs.org/docs/hooks-effect.html">使用 Effect Hook </a></li>
-<li>结合例子说明，非常推荐！<a href="https://juejin.cn/post/6844904200397127688">useEffect-数据获取</a></li>
-<li><a href="https://zh-hans.reactjs.org/docs/hooks-custom.html">自定义 Hook</a></li>
-</ul>
-                </div>
-
-                <p class="mb-0 f6 text-gray">
-                  
-                  
-                  <a href="/tags/react" class="pinned-item-meta muted-link ">
-                    <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                      <path fill-rule="evenodd"
-                        d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                      </path>
-                    </svg>
-                    React
-                  </a>
-                  
-                  
-                </p>
-              </div>
-            </div>
-          </li>
-          
         </ol>
       </div>
     </div>
 
     
     <div class="mt-4 position-relative" id="contributions" data='[
+{
+  "title": "%e7%94%9f%e6%88%90%e5%85%8d%e8%b4%b9%e8%af%81%e4%b9%a6",
+  "link": "https://and2long.github.io/post/%E7%94%9F%E6%88%90%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6/",
+  "publishDate": "2024-12-28%2015:56:30"
+},
+
 {
   "title": "%e3%80%90Flutter%e3%80%91%e5%9b%bd%e9%99%85%e5%8c%96%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0",
   "link": "https://and2long.github.io/post/flutter%E5%9B%BD%E9%99%85%E5%8C%96%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/",

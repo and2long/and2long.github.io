@@ -151,7 +151,7 @@
                 </path>
               </svg>
               Posts
-              <span class="Counter">10</span>
+              <span class="Counter">11</span>
             </a>
           </nav>
           <div class="profile-color-modes js-promo-color-modes-banner-profile isInitialToggle">
@@ -428,7 +428,7 @@
         </path>
       </svg>
       Posts
-      <span class="Counter ">10</span>
+      <span class="Counter ">11</span>
     </a>
   </nav>
 </div>
@@ -541,6 +541,104 @@
         
       
       <ul>
+        
+        <li class="col-12 d-flex width-full py-4 border-bottom color-border-secondary public source">
+          <div class="col-12 d-inline-block">
+            <div class="d-inline-block mb-1">
+              <h3 class="wb-break-all">
+                <a href="https://and2long.github.io/post/%E7%94%9F%E6%88%90%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6/">生成免费证书</a>
+              </h3>
+            </div>
+
+            <div>
+              <div class="col-12 d-inline-block text-gray mb-2 pr-4">
+                <p>使用 acme.sh 来生成免费的证书</p>
+<p><a href="https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E">使用说明</a></p>
+<p>推荐使用 root 用户来安装和操作！！！</p>
+<h1 id="操作步骤">操作步骤</h1>
+<h3 id="安装-acmesh">安装 acme.sh</h3>
+<p>运行以下命令安装 acme.sh：
+<code>curl https://get.acme.sh | sh -s email=my@example.com</code></p>
+<p>然后，加载环境变量：
+<code>source ~/.bashrc</code></p>
+<h3 id="使用-cloudflare-的-dns-来签发证书">使用 Cloudflare 的 DNS 来签发证书</h3>
+<p>配置 Cloudflare API 令牌和邮箱：</p>
+<ul>
+<li><code>export CF_Token=&quot;你的API令牌&quot;</code></li>
+<li><code>export CF_Email=&quot;你的邮箱&quot;</code></li>
+</ul>
+<p>执行一下命令：
+<code>acme.sh --issue --dns dns_cf -d example.com -d *.example.com</code></p>
+<h3 id="安装证书">安装证书</h3>
+<pre tabindex="0"><code>acme.sh --install-cert -d example.com \
+--key-file /etc/nginx/ssl/example.com.key \
+--fullchain-file /etc/nginx/ssl/fullchain.cer \
+--reloadcmd &#34;systemctl reload nginx&#34;
+</code></pre><h3 id="查看已安装证书信息">查看已安装证书信息</h3>
+<p><code>acme.sh --info -d example.com</code></p>
+<h3 id="nginx-配置">nginx 配置</h3>
+<ul>
+<li>静态文件代理</li>
+</ul>
+<pre tabindex="0"><code>server {
+    listen 443 ssl;
+    server_name example.com;
+
+    ssl_certificate /etc/nginx/ssl/fullchain.cer;
+    ssl_certificate_key /etc/nginx/ssl/example.com.key;
+
+    ssl_session_cache shared:SSL:1m;
+    ssl_session_timeout 10m;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    root /data/projects/your-website;
+    index index.html;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+</code></pre><ul>
+<li>反向代理</li>
+</ul>
+<pre tabindex="0"><code>server {
+    listen 80;
+    server_name sub.example.com;
+    return 301 https://$host$request_uri;
+}
+server {
+    listen 443 ssl;
+    server_name sub.example.com;
+
+    ssl_certificate /etc/nginx/ssl/fullchain.cer;
+    ssl_certificate_key /etc/nginx/ssl/example.com.key;
+
+    ssl_session_cache shared:SSL:1m;
+    ssl_session_timeout 10m;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    location / {
+        proxy_pass  http://127.0.0.1:8075;
+    }
+}
+</code></pre>
+              </div>
+            </div>
+
+            <div class="f6 text-gray mt-2">
+              
+
+              Created
+              <relative-time datetime=" Sat, 28 Dec 2024 15:56:30 &#43;0800" class="no-wrap"
+                title=" Sat, 28 Dec 2024 15:56:30 &#43;0800">
+                Sat, 28 Dec 2024 15:56:30 &#43;0800
+              </relative-time>
+            </div>
+          </div>
+        </li>
         
         <li class="col-12 d-flex width-full py-4 border-bottom color-border-secondary public source">
           <div class="col-12 d-inline-block">
@@ -1183,48 +1281,6 @@ int max(int num1, int num2)
           </div>
         </li>
         
-        <li class="col-12 d-flex width-full py-4 border-bottom color-border-secondary public source">
-          <div class="col-12 d-inline-block">
-            <div class="d-inline-block mb-1">
-              <h3 class="wb-break-all">
-                <a href="https://and2long.github.io/post/qss%E9%80%89%E6%8B%A9%E5%99%A8/">QSS选择器</a>
-              </h3>
-            </div>
-
-            <div>
-              <div class="col-12 d-inline-block text-gray mb-2 pr-4">
-                <h2 id="通配符选择器">通配符选择器</h2>
-<p>* 匹配所有控件。</p>
-<pre tabindex="0"><code>* {
-
-}
-</code></pre>
-              </div>
-            </div>
-
-            <div class="f6 text-gray mt-2">
-              
-              
-              <a class="muted-link mr-3" href="/tags/qt">
-                <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                  <path fill-rule="evenodd"
-                    d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
-                  </path>
-                </svg>
-                Qt
-              </a>
-              
-              
-
-              Created
-              <relative-time datetime=" Wed, 19 Jan 2022 14:01:25 &#43;0000" class="no-wrap"
-                title=" Wed, 19 Jan 2022 14:01:25 &#43;0000">
-                Wed, 19 Jan 2022 14:01:25 &#43;0000
-              </relative-time>
-            </div>
-          </div>
-        </li>
-        
       </ul>
       <div class="paginate-container">
         <div class="BtnGroup">
@@ -1232,7 +1288,7 @@ int max(int num1, int num2)
           <button class="btn btn-outline BtnGroup-item" disabled="disabled">Previous</button>
           
           
-          <button class="btn btn-outline BtnGroup-item" disabled="disabled">Next</button>
+          <a rel="nofollow" class="btn btn-outline BtnGroup-item" href="/post/page/2/">Next</a>
           
         </div>
       </div>
